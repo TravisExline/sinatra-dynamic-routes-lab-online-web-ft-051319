@@ -24,16 +24,17 @@ class App < Sinatra::Base
     "#{params[:word1]} #{params[:word2]} #{params[:word3]} #{params[:word4]} #{params[:word5]}."
   end
 
-  # get '/:operation/:number1/:number2' do
-  #   case params[:operations]
-  #   when "add"
-  #     @answer = params[:number1].to_i + params[:number2].to_i
-  #   when "subtract"
-  #     @answer = params[:number1].to_i - params[:number2].to_i
-  #   when "multiply"
-  #     @answer = params[:number1].to_i * params[:number2].to_i
-  #   when "divide"
-  #     @answer = params[:number1].to_i / params[:number2].to_i
-  # end
-  # @answer.to_s
+  get '/:operation/:number1/:number2' do
+    case params[:operations]
+    when "add"
+      @answer = params[:number1].to_i + params[:number2].to_i
+    when "subtract"
+      @answer = params[:number1].to_i - params[:number2].to_i
+    when "multiply"
+      @answer = params[:number1].to_i * params[:number2].to_i
+    when "divide"
+      @answer = params[:number1].to_i / params[:number2].to_i
+    end
+  @answer.to_s
+end
 end
